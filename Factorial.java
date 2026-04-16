@@ -1,11 +1,14 @@
-// V2: Recursiva
+import java.util.stream.LongStream;
+
+
+// V3: Funcional
 
 public class Factorial {
 
 public static long calcular(int n) {
 
-if (n <= 1) return 1;
+return LongStream.rangeClosed(1, n).reduce(1, (a, b) -> a * b);
 
-return n * calcular(n - 1);
+}
 
 }
